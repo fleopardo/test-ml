@@ -13,12 +13,25 @@ body {
 	width: 100%;
 	max-width: 1024px;
 	margin: 0 auto;
-	background: grey;
 }
 
-.demo-carousel{
-	width: 40%;
+.product-detail,
+.img-cont{
+	width: 45%;
+}
+
+.img-cont{
+	float: left;
 	img {
 		width: 100%;
+	}
+}
+
+.product-detail {
+	float: right;
+	fieldset{
+		border: none;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
