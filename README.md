@@ -6,5 +6,5 @@
 ### Como correrlo
 
 1. `npm install`
-2. `gulp dist`
-3. ir a /dist
+2. `gulp compile`
+3. ir a /compile

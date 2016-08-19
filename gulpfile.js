@@ -27,7 +27,7 @@ gulp.task('css', function() {
                preserveHacks: true
            })
        ]))
-       .pipe(gulp.dest('./dist/css/'));
+       .pipe(gulp.dest('./compile/css/'));
 });
 
 gulp.task('js', function(){
@@ -38,32 +38,32 @@ gulp.task('js', function(){
     ])
     .pipe(concat('bundle.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js/'))
+    .pipe(gulp.dest('./compile/js/'))
 });
 
 gulp.task('html', function(){
   return gulp.src('./index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./compile/'))
 });
 
 gulp.task('img', function(){
   return gulp.src('./images/**/*')
-    .pipe(gulp.dest('./dist/images/'))
+    .pipe(gulp.dest('./compile/images/'))
 });
 
 gulp.task('fonts', function(){
   return gulp.src('./node_modules/chico/dist/assets/**/*')
-    .pipe(gulp.dest('./dist/assets/'))
+    .pipe(gulp.dest('./compile/assets/'))
 });
 
-gulp.task('dist', ['html','js','css','img', 'fonts']);
+gulp.task('compile', ['html','js','css','img', 'fonts']);
 
 
 
 
 gulp.task('watch', function() {
-   gulp.start('dist');
+   gulp.start('compile');
    gulp.watch('./sass/*.scss', ['css']);
    gulp.watch('./*.html', ['html']);
    gulp.watch('./js/**/*.js', ['js']);
