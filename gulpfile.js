@@ -8,7 +8,8 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   sass = require('gulp-sass'),
   htmlmin = require('gulp-htmlmin'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  ghPages = require('gulp-gh-pages');
  
 
 
@@ -56,6 +57,12 @@ gulp.task('fonts', function(){
   return gulp.src('./node_modules/chico/dist/assets/**/*')
     .pipe(gulp.dest('./compile/assets/'))
 });
+
+gulp.task('deploy', function() {
+  return gulp.src('./compile/**/*')
+    .pipe(ghPages());
+});
+
 
 gulp.task('compile', ['html','js','css','img', 'fonts']);
 
