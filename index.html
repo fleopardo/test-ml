@@ -29,7 +29,7 @@
                 <h1>test - Fernando Leopardo</h1>
             </div>
         </header>
-        <main itemscope itemtype="http://schema.org/Product">
+        <main itemscope itemtype="http://schema.org/Product" role="main">
             <div class="layout">
                 <h1 itemprop="name">Ipad mini Apple 16Gb Wifi Led 7.9</h1>
                 <section class="product-details">
@@ -43,14 +43,14 @@
                             <fieldset>
                                 <p>
                                     <label for="quantity">Quantity</label>
-                                    <select id="quantity"> 
+                                    <select id="quantity" aria-required="true" tabindex="0"> 
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </p>
                                 <p>
                                     <label for="payment">Payment</label> 
-                                    <select id="payment">
+                                    <select id="payment" aria-required="true" tabindex="1">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -65,7 +65,7 @@
                     </section>
                     <section class="other-products">
                         <h2>More products like this</h2>
-                        <div class="test-carousel ch-carousel">
+                        <div class="test-carousel ch-carousel"role="slider">
                             
                             <ul>
                                 <li><a href="#" title=""><img src="./images/chicoui.jpg"></a></li>
@@ -77,12 +77,12 @@
                     </section>
                 </section>
                 <hr>
-                <section class="tabs">
-                   <div class="tab">
+                <section class="tabs"role="tablist">
+                   <div class="tab" role="tab" aria-controls="section1" aria-selected="true">
                        <input type="radio" id="tab-1" name="tab-group-1" checked>
                        <label for="tab-1">Tab One</label>
                        
-                        <div class="content">
+                        <div class="content" role="tabpanel">
                             <h3>Buyer</h3>
                             <div class="ch-box-info">
                                 <p>Pregunta 1</p>
@@ -95,10 +95,10 @@
                    </div>
                     
                    <div class="tab">
-                       <input type="radio" id="tab-2" name="tab-group-1">
+                       <input type="radio" id="tab-2" name="tab-group-1"role="tab" aria-controls="section2">
                        <label for="tab-2">Tab Two</label>
                        
-                       <div class="content">
+                       <div class="content" role="tabpanel" aria-hidden="true">
                             <h3>Buyer</h3>
                             <div class="ch-box-info">
                                 <p>Pregunta 2</p>
@@ -111,10 +111,10 @@
                    </div>
                     
                     <div class="tab">
-                       <input type="radio" id="tab-3" name="tab-group-1">
+                       <input type="radio" id="tab-3" name="tab-group-1" role="tab" aria-controls="section3">
                        <label for="tab-3">Tab Three</label>
                      
-                       <div class="content">
+                       <div class="content" role="tabpanel" aria-hidden="true">
                            <h3>Buyer</h3>
                             <div class="ch-box-info">
                                 <p>Pregunta 3</p>
